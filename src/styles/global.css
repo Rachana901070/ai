@@ -1,0 +1,28 @@
+:root { --accent: #2f7d32; --bg: #ffffff; --text: #1f2937; --muted: #6b7280; }
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; background: var(--bg); color: var(--text); }
+
+.container { width: 100%; max-width: 980px; margin: 0 auto; padding: 16px; }
+.app-shell { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+
+button { background: var(--accent); color: white; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e7eb; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+.form-field { margin-bottom: 14px; }
+
+.card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: white; }
+.row { display: flex; gap: 12px; }
+.row.wrap { flex-wrap: wrap; }
+.row > * { flex: 1; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid #e5e7eb; }
+.nav a { text-decoration: none; color: var(--text); margin-right: 12px; }
+.footer { padding: 20px 16px; border-top: 1px solid #e5e7eb; color: var(--muted); text-align: center; }
+
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 999px; font-size: 12px; border: 1px solid #e5e7eb; }
+
+.empty { text-align: center; color: var(--muted); padding: 40px 0; }
+.spinner { width: 24px; height: 24px; border: 3px solid #e5e7eb; border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 12px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }

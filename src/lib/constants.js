@@ -1,0 +1,26 @@
+export const ROLES = {
+  DONOR: 'DONOR',
+  COLLECTOR: 'COLLECTOR',
+  ADMIN: 'ADMIN',
+};
+
+export const DONATION_STATUS = {
+  NEW: 'NEW',
+  MATCHED: 'MATCHED',
+  PICKUP_STARTED: 'PICKUP_STARTED',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED',
+};
+
+export const MATCH_STATUS = {
+  PENDING: 'PENDING',
+  ACCEPTED: 'ACCEPTED',
+  REJECTED: 'REJECTED',
+};
+
+export const PICKUP_STATUS = {
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED',
+};
+
+export const APP_NAME = 'Maitri Dhatri';
