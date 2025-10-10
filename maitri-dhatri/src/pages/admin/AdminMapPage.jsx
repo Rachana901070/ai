@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import { Marker, Popup } from 'react-leaflet';
-import { MapView } from '../../components/MapView.jsx';
+import { ClusterMap } from '../../components/ClusterMap.jsx';
 import { useQuery } from '@tanstack/react-query';
 import { listAllPickups } from '../../services/admin.js';
 
@@ -10,7 +9,7 @@ export function AdminMapPage() {
   return (
     <div className="space-y-3">
       <h1 className="text-xl font-semibold">Live Map</h1>
-      {isLoading ? 'Loading...' : <MapView markers={markers} />}
+      {isLoading ? 'Loading...' : <ClusterMap points={markers} />}
     </div>
   );
 }
