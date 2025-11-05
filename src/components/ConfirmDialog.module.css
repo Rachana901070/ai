@@ -1,0 +1,1 @@
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;padding:16px}.dialog{background:white;border-radius:12px;max-width:420px;width:100%;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
