@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import fs from 'fs';
 import dotenv from 'dotenv';
 import compression from 'compression';
 import authRouter from './routes/auth';
@@ -27,6 +28,10 @@ app.use(compression());
 
 // Static uploads
 const uploadsDir = path.join(process.cwd(), 'uploads');
+// Ensure uploads directory exists at startup for multer/static hosting
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 app.use('/uploads', express.static(uploadsDir));
 
 // Health
@@ -40,6 +45,9 @@ app.use('/api/posts', postsRouter);
 app.use('/api/pickups', pickupsRouter);
 app.use('/api/proofs', proofsRouter);
 app.use('/api/admin', adminRouter);
+// Public, unauthenticated endpoints
+import publicRouter from './routes/public';
+app.use('/api/public', publicRouter);
 
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/maitri_dhatri';
